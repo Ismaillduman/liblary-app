@@ -1,0 +1,120 @@
+
+You can copy below data in configuration.properties file
+
+qa2_url=https://library2.cydeo.com/
+lib22_user=librarian22@library
+lib22_pass=libraryUser
+student55_user=student55@library
+student55_pass=libraryUser
+
+
+-----------------------------
+
+
+Feature: Login feature
+
+  @librarian
+  Scenario: Login as a librarian
+    Given I am on the login page
+    When I login as a librarian
+    Then dashboard should be displayed
+
+  @student
+  Scenario: Login as a student
+    Given I am on the login page
+    When I login as a student
+    Then books should be displayed
+
+
+ ----------------------
+
+
+Feature: Login with parameters
+
+  @librarianParam
+  Scenario: Login as librarian 49
+    Given I am on the login page
+    When I enter username "librarian49@library"
+    And I enter password "libraryUser"
+    And click the sign in button
+    And there should be 2903 users
+    Then dashboard should be displayed
+      #number can be whatever you have there
+
+
+--------------------------
+
+
+Feature: A Search functionality on the users page
+  As a user, when I login as a librarian and I go to Users page, then table should have following coloumns:
+  • Actions
+  • UserID
+  • Full Name
+  • Email
+  • Group
+  • Status
+
+   @wip
+  Scenario: Table columns names
+    Given I am on the login page
+    And I login as a librarian
+    And I click on "Users" link
+    Then table should have following column names:
+      | Actions   |
+      | User ID   |
+      | Full Name |
+      | Email     |
+      | Group     |
+      | Status    |
+
+
+-------------------------------------
+
+
+Feature: A Show records functionality
+
+  Scenario: verify default values in Users page
+    Given I am on the login page
+    And I login as a librarian
+    When I click on "Users" link
+    Then show records default value should be 10
+    And show records should have following options:
+      | 5   |
+      | 10  |
+      | 15  |
+      | 50  |
+      | 100 |
+      | 200 |
+      | 500 |
+
+
+  ----------------------------
+
+
+
+Feature: User account tests
+  As a user, I should be able to login with different users using their correct emails and passwords.
+  when I login, I should be able to see username in the account username section.
+
+  @all_accounts
+  Scenario Outline: Verify user information <email>
+    Given I am on the login page
+    When I login using "<email>" and "<password>"
+    Then account holder name should be "<name>"
+#TEST DATA
+    @students
+    Examples:
+      | email             | password | name            |
+      | student27@library | libraryUser | Test Student 27 |
+      | student28@library | libraryUser | Test Student 28 |
+      | student29@library | libraryUser | Test Student 29 |
+      | student30@library | libraryUser | Test Student 30 |
+
+    @librarians
+    Examples:
+      | email | password | name |
+      | librarian13@library | libraryUser | Test Librarian 13 |
+      | librarian14@library | libraryUser | Test Librarian 14 |
+      | librarian15@library | libraryUser | Test Librarian 15 |
+      | librarian16@library | libraryUser | Test Librarian 16 |
+      | librarian17@library | libraryUser | Test Librarian 17 |

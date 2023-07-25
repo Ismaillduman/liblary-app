@@ -19,4 +19,7 @@ public class LoginPage {
     @FindBy(id = "inputPassword")
     public WebElement password_box;
 
+    @FindBy(css = ".btn.btn-lg.btn-primary.btn-block")
+    public WebElement login_button;
+
 }

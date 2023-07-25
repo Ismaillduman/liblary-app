@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DashboardPage {
-    public DashboardPage(){
+import java.util.List;
+
+public class UserPage {
+    public UserPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "//*[@id='user_avatar']/following-sibling::span")
-    public WebElement names;
-
-    @FindBy(xpath = "//h2[text()='2922']")
-    public WebElement users_count;
+    @FindBy(xpath = "//thead/tr/th")
+    public List<WebElement> table_headers;
 }

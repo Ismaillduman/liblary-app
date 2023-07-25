@@ -1,7 +1,7 @@
 Feature: Login feature
 
   Background:
-    Given  Given I am on the login page
+    Given I am on the login page
 
   @librarian
   Scenario: Login as a librarian

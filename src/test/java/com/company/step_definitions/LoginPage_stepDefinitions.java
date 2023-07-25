@@ -5,6 +5,7 @@ import com.company.pages.LoginPage;
 import com.company.utilities.BrowserUtils;
 import com.company.utilities.ConfigurationReader;
 import com.company.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,8 +24,8 @@ public class LoginPage_stepDefinitions {
     DashboardPage dashboardPage = new DashboardPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
 
-    @Given("Given I am on the login page")
-    public void given_i_am_on_the_login_page() {
+    @Given("I am on the login page")
+    public void i_am_on_the_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("qa2_url"));
         wait.until(ExpectedConditions.titleContains("Login - Library"));
         BrowserUtils.verifyTitleContains("Login - Library");
@@ -57,4 +58,33 @@ public class LoginPage_stepDefinitions {
     }
 
 
+    @When("I enter username {string}")
+    public void iEnterUsername(String arg0) {
+        loginPage.email_box.sendKeys(arg0);
+    }
+
+    @And("I enter password {string}")
+    public void iEnterPassword(String arg0) {
+        loginPage.password_box.sendKeys(arg0);
+    }
+
+    @And("click the sign in button")
+    public void clickTheSignInButton() {
+        loginPage.login_button.click();
+    }
+
+    @And("there should be {int} users")
+    public void thereShouldBeUsers(int expected_count) {
+        wait.until(ExpectedConditions.visibilityOf(dashboardPage.users_count));
+        String expectedUserAccount= String.valueOf(expected_count);
+
+        String actual_count=dashboardPage.users_count.getText();
+        System.out.println(actual_count);
+        Assert.assertEquals("Not match please fix it!!",expectedUserAccount,actual_count);
+    }
+
+    @Then("dashboard should be displayed")
+    public void dashboardShouldBeDisplayed() {
+        BrowserUtils.verifyTitleContains("Library");
+    }
 }

@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/company/step_definitions",
-        dryRun = true,
-        tags = "",
+        dryRun = false,
+        tags = "  @all_accounts",
         publish = true
 
 )

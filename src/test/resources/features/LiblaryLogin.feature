@@ -7,7 +7,7 @@ Feature: Login feature
   Scenario: Login as a librarian
 
     When I login as a librarian
-    Then dashboard should be displayed
+    Then I should be able to see "Library" dashboard page
 
   @all_accounts
   Scenario Outline: Login as a

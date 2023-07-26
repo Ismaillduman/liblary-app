@@ -1,8 +1,6 @@
 
 T
 $src/test/java/com/company/pages/task,1\c\1c50b9c7b75c2805775899778db823b21e869106
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 h
 8src/test/java/com/company/runners/FailedCukesRunner.java,5\f\5f61a4adba02902121457dea24869c3fdf2ba089
 e

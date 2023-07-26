@@ -1,6 +1,6 @@
 node {
     stage('Clone code') {
-        git 'https://github.com/Ismaillduman/liblary-app'
+        git 'https://github.com/Ismaillduman/liblary-app.git'
     }
 
     stage('Run tests'){

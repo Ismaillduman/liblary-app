@@ -11,7 +11,7 @@ public abstract class BasePage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(linkText = "Users")
+    @FindBy(xpath = "//span[text()='Users']")
     public WebElement usersLink;
 
     @FindBy(linkText = "Dashboard")

@@ -13,4 +13,7 @@ public class UserPage {
     }
     @FindBy(xpath = "//thead/tr/th")
     public List<WebElement> table_headers;
+
+    @FindBy(css = "[name='tbl_users_length']")
+    public WebElement default_record;
 }

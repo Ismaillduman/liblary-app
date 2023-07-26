@@ -9,7 +9,7 @@ Feature: Login feature
     When I login as a librarian
     Then I should be able to see "Library" dashboard page
 
-  @all_accounts
+  @all_accounts @smoke
   Scenario Outline: Login as a
 
     When I login using "<email>" and "<password>"

@@ -19,13 +19,13 @@ import java.util.List;
 public class UserPage_stepDefinitions extends BasePage {
     UserPage userPage = new UserPage();
 
-    WebDriverWait wait= new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
 
     @Given("I click on {string} link")
     public void i_click_on_link(String string) {
         wait.until(ExpectedConditions.elementToBeClickable(usersLink));
         usersLink.click();
-
+        usersLink.getText();git
 
     }
 
@@ -34,27 +34,27 @@ public class UserPage_stepDefinitions extends BasePage {
 
         List<String> actual_list = new ArrayList<>();
         for (WebElement eachWebElement : userPage.table_headers) {
-            String element= eachWebElement.getText();
+            String element = eachWebElement.getText();
             actual_list.add(element);
         }
-        Assert.assertEquals(dataTable,actual_list);
+        Assert.assertEquals(dataTable, actual_list);
 
     }
 
     @Then("show records default value should be {int}")
     public void showRecordsDefaultValueShouldBe(int defaultValue) {
-        Select dropDown= new Select(userPage.default_record);
-        int actualDefaultValue= Integer.parseInt(dropDown.getFirstSelectedOption().getText());
-        Assert.assertEquals("Not match the values",defaultValue, actualDefaultValue);
+        Select dropDown = new Select(userPage.default_record);
+        int actualDefaultValue = Integer.parseInt(dropDown.getFirstSelectedOption().getText());
+        Assert.assertEquals("Not match the values", defaultValue, actualDefaultValue);
     }
 
     @And("show records should have following options")
     public void showRecordsShouldHaveFollowingOptions(List<String> expectedDefault) {
-        Select dropDown= new Select(userPage.default_record);
-        List<String> actualDefaultValues= new ArrayList<>();
+        Select dropDown = new Select(userPage.default_record);
+        List<String> actualDefaultValues = new ArrayList<>();
         for (WebElement eachOption : dropDown.getOptions()) {
             actualDefaultValues.add(eachOption.getText());
         }
-        Assert.assertEquals(expectedDefault,actualDefaultValues);
+        Assert.assertEquals(expectedDefault, actualDefaultValues);
     }
 }

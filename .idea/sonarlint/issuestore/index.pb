@@ -1,8 +1,6 @@
 
 h
 8src/test/java/com/company/runners/FailedCukesRunner.java,5\f\5f61a4adba02902121457dea24869c3fdf2ba089
-x
-Hsrc/test/java/com/company/step_definitions/UserPage_stepDefinitions.java,6\2\62cb51efd30062953428e26b53f4899e11a12d7f
 y
 Isrc/test/java/com/company/step_definitions/LoginPage_stepDefinitions.java,d\c\dc64d5bf3a299803c81751133a4590183f98eeee
 ]

@@ -21,5 +21,6 @@ public class LoginPage {
 
     @FindBy(css = ".btn.btn-lg.btn-primary.btn-block")
     public WebElement login_button;
-
+    @FindBy(css = ".btn.btn-lg.btn-primary.btn-block")
+    public WebElement login_button2;
 }

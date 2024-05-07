@@ -25,7 +25,7 @@ public class UserPage_stepDefinitions extends BasePage {
     public void i_click_on_link(String string) {
         wait.until(ExpectedConditions.elementToBeClickable(usersLink));
         usersLink.click();
-        usersLink.isSelected();
+        usersLink.isEnabled();
         usersLink.isDisplayed();
 
     }

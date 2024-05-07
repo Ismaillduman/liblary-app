@@ -9,8 +9,6 @@ Isrc/test/java/com/company/step_definitions/LoginPage_stepDefinitions.java,d\c\
 -src/test/java/com/company/pages/BasePage.java,3\f\3f790a3c1d384538cbcd4283b643afe71a0633af
 e
 5src/test/java/com/company/utilities/BrowserUtils.java,7\f\7f8fe445bd14a6457e9c2c9280f9615dca7a663c
-^
-.src/test/java/com/company/pages/LoginPage.java,f\c\fcab2acef59fef0fea3481f5275e1b831844f5e3
 ]
 -src/test/java/com/company/pages/UserPage.java,7\5\753e28b3123853563dd1ce80c10fbddd32fec740
 l

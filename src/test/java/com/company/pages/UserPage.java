@@ -16,4 +16,7 @@ public class UserPage {
 
     @FindBy(css = "[name='tbl_users_length']")
     public WebElement default_record;
+
+    @FindBy(css = "[name='tbl_users_length']")
+    public WebElement default_record1;
 }

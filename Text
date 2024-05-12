@@ -1,6 +1,9 @@
 Try conflic
 <<<<<<< Updated upstream
-t yesterday
+t yesterday maked new change
+add this line
+
 =======
-today
+t yesterday but also today
+create this line
 >>>>>>> Stashed changes
